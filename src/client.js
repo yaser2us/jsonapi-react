@@ -49,6 +49,14 @@ export class ApiClient {
     return this
   }
 
+  setSchema(schema) {
+    this.config.schema = parseSchema({
+      ...this.config.schema,
+      ...schema
+    })
+    return this
+  }
+
   removeHeader(key) {
     delete this.config.headers[key]
     return this
